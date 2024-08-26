@@ -6,10 +6,12 @@ namespace Modules\Auth\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Konnec\VueEloquentApi\Traits\EloquentApi;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
+    use EloquentApi;
     use HasApiTokens;
     use HasFactory, Notifiable;
 

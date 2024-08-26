@@ -1,0 +1,2 @@
+* * * * * php /www/var/tfmch_LARAVEL/artisan schedule:run > '/dev/null' 2>&1
+0 0 * * * /www/var/tfmch_LARAVEL/update.sh

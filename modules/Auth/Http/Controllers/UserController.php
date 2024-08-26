@@ -3,21 +3,18 @@
 namespace Modules\Auth\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
-use Modules\Application\Notifications\SpsResetPasswordNotification;
 use Modules\Auth\Models\User;
+use Modules\Auth\Notifications\ResetPasswordNotification;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class UserController extends Controller
 {
-    use SendsPasswordResetEmails;
-
     public function __construct()
     {
         $this->middleware('auth:sanctum')->except(['login', 'forgotPassword', 'resetPassword', 'store', 'index']);
@@ -100,7 +97,7 @@ class UserController extends Controller
                 'token' => $token,
                 'created_at' => Carbon::now(),
             ]);
-        $user->notify(new SpsResetPasswordNotification($user->email, $token));
+        $user->notify(new ResetPasswordNotification($token));
 
         return [
             'message' => 'We have e-mailed your password reset link!',
@@ -116,7 +113,7 @@ class UserController extends Controller
         $user->tokens()->delete();
 
         $req = [];
-        $req['username'] = $user->username;
+        $req['email'] = $user->email;
         $req['password'] = $request->password;
 
         return $this->login(new Request($req));

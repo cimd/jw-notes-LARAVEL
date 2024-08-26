@@ -38,7 +38,7 @@ class Kernel extends ConsoleKernel
     {
         $this->registerModulesCommands();
 
-        $this->load(__DIR__.'/Commands');
+        $this->load(__DIR__ . '/Commands');
 
         require base_path('routes/console.php');
     }
@@ -51,10 +51,10 @@ class Kernel extends ConsoleKernel
         $modulesCommands = collect(
             glob(base_path($searchPath))
         )->map(function ($item) {
-            (PHP_OS === 'WINNT') ? $withoutPrefix = Str::after($item, base_path().'\\modules\\') : $withoutPrefix = Str::after($item, base_path().'/modules/');
+            (PHP_OS === 'WINNT') ? $withoutPrefix = Str::after($item, base_path() . '\\modules\\') : $withoutPrefix = Str::after($item, base_path() . '/modules/');
             $withoutSuffix = Str::beforeLast($withoutPrefix, '.php');
 
-            $partial = 'Modules'.DIRECTORY_SEPARATOR.$withoutSuffix;
+            $partial = 'Modules' . DIRECTORY_SEPARATOR . $withoutSuffix;
 
             return str_replace('/', '\\', $partial);
         })->toArray();

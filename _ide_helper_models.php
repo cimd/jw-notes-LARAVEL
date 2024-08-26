@@ -27,6 +27,13 @@ namespace Modules\Auth\Models{
  * @property-read int|null $notifications_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \Laravel\Sanctum\PersonalAccessToken> $tokens
  * @property-read int|null $tokens_count
+ * @method static \Illuminate\Database\Eloquent\Builder|User apiAppend(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|User apiFields(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|User apiFilter(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|User apiInclude(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|User apiPaginate(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|User apiQuery(\Illuminate\Http\Request $request, $builder = false)
+ * @method static \Illuminate\Database\Eloquent\Builder|User apiSort(\Illuminate\Http\Request $request)
  * @method static \Illuminate\Database\Eloquent\Builder|User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|User query()
