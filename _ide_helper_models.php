@@ -49,3 +49,42 @@ namespace Modules\Auth\Models{
 	class User extends \Eloquent {}
 }
 
+namespace Modules\Note\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property int $user_id
+ * @property string $type
+ * @property \Illuminate\Support\Carbon|null $meeting_at
+ * @property string|null $keywords
+ * @property array|null $notes
+ * @property \Illuminate\Support\Carbon $created_at
+ * @property \Illuminate\Support\Carbon $updated_at
+ * @property \Illuminate\Support\Carbon|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Note apiAppend(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note apiFields(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note apiFilter(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note apiInclude(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note apiPaginate(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note apiQuery(\Illuminate\Http\Request $request, $builder = false)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note apiSort(\Illuminate\Http\Request $request)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Note newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Note onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Note query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereKeywords($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereMeetingAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereNotes($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Note withTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|Note withoutTrashed()
+ */
+	class Note extends \Eloquent {}
+}
+
