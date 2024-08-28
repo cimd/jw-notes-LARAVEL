@@ -12,14 +12,12 @@ class Note extends Model
     use EloquentApi;
     use SoftDeletes;
 
-//    protected $table = 'Note';
-
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     protected $casts = [
         'user_id' => 'integer',
         'meeting_at' => 'date:Y-m-d',
-        'notes' => 'array',
+        'keywords' => 'array',
     ];
 
     protected array $filters = [
