@@ -9,6 +9,7 @@ use RoachPHP\Extensions\StatsCollectorExtension;
 use RoachPHP\Http\Response;
 use RoachPHP\Spider\BasicSpider;
 use RoachPHP\Spider\ParseResult;
+use Symfony\Component\DomCrawler\Crawler;
 
 class Watchtower extends BasicSpider
 {
@@ -43,7 +44,9 @@ class Watchtower extends BasicSpider
     public function parse(Response $response): Generator
     {
         $header = $response->filter('div > header > h1')->text();
-        $text = $response->filter('div.bodyTxt')->html();
+        $text = $response->filter('div.bodyTxt > p')->each(function (Crawler $node, $i): string {
+            return $node->html();
+        });
         $aside = $response->filter('aside')->html();
 
         yield $this->item([

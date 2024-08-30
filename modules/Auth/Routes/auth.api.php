@@ -10,5 +10,4 @@ Route::prefix('v1')->group(function () {
 
     Route::get('users/me', [UserController::class, 'me']);
     Route::apiResource('users', UserController::class);
-
 });
