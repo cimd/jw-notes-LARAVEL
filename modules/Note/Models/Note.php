@@ -16,7 +16,7 @@ class Note extends Model
 
     protected $casts = [
         'user_id' => 'integer',
-        'meeting_at' => 'date',
+        'meeting_at' => 'date:Y-m-d',
         'keywords' => 'array',
     ];
 

@@ -11,12 +11,14 @@ class NoteController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:sanctum')->except(['index']);
+        $this->middleware('auth:sanctum');
     }
 
     public function index(Request $request): JsonResponse
     {
-        $result = Note::apiQuery($request);
+        $result = Note::query()
+            ->where('user_id', auth()->user()->id)
+            ->apiQuery($request);
 
         return response()->index($result);
     }
