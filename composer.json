@@ -20,6 +20,7 @@
         "laravel/scout": "^10.9",
         "laravel/tinker": "^2.9",
         "meilisearch/meilisearch-php": "^1.8",
+        "roach-php/laravel": "^3.1",
         "saloonphp/laravel-http-sender": "^3.0",
         "saloonphp/laravel-plugin": "^3.5",
         "saloonphp/rate-limit-plugin": "^2.0",
