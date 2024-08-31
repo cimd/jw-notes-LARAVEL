@@ -1,10 +1,10 @@
 #!/bin/bash
 # sudo chmod +x update.sh
 
-echo "Updating Quasar"
-git -C public/SPS pull
+echo "Updating Frontend"
+git -C ../jw-notes pull
 
-echo "Updating Laravel"
+echo "Updating Backend"
 git pull
 composer install -o --no-dev
 

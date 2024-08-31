@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Konnec\VueEloquentApi\Filters\WhereEqual;
 use Konnec\VueEloquentApi\Traits\EloquentApi;
+use Laravel\Scout\Searchable;
 
 class Note extends Model
 {
     use EloquentApi;
     use SoftDeletes;
+    use Searchable;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
