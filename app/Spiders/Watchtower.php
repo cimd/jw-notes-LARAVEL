@@ -47,12 +47,16 @@ class Watchtower extends BasicSpider
         $text = $response->filter('div.bodyTxt > p')->each(function (Crawler $node, $i): string {
             return $node->html();
         });
-        $aside = $response->filter('aside')->html();
+        $recapTitle = $response->filter('aside > div > h2')->text();
+        $recapQuestions = $response->filter('aside > div.boxContent > ul > li')->each(function (Crawler $node, $i): string {
+            return $node->html();
+        });
 
         yield $this->item([
             'header' => $header,
             'text' => $text,
-            'recap' => $aside,
+            'recapTitle' => $recapTitle,
+            'recapQuestions' => $recapQuestions,
         ]);
     }
 }

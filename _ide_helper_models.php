@@ -57,8 +57,8 @@ namespace Modules\Note\Models{
  * @property int $user_id
  * @property string $type
  * @property \Illuminate\Support\Carbon|null $meeting_at
- * @property string|null $keywords
- * @property array|null $notes
+ * @property array|null $keywords
+ * @property string|null $notes
  * @property \Illuminate\Support\Carbon $created_at
  * @property \Illuminate\Support\Carbon $updated_at
  * @property \Illuminate\Support\Carbon|null $deleted_at

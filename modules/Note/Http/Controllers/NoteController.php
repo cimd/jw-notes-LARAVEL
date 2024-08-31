@@ -3,9 +3,9 @@
 namespace Modules\Note\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Modules\Note\Models\Note;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Modules\Note\Models\Note;
 
 class NoteController extends Controller
 {

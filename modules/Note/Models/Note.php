@@ -11,8 +11,8 @@ use Laravel\Scout\Searchable;
 class Note extends Model
 {
     use EloquentApi;
-    use SoftDeletes;
     use Searchable;
+    use SoftDeletes;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 

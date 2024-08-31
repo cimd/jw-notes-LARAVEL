@@ -7,7 +7,7 @@ it('parses', function () {
     Roach::startSpider(Watchtower::class);
     $result = Roach::collectSpider(Watchtower::class);
 
-    dump($result[0]);
+    dump($result[0]['text'][0]);
 
     expect($result)->toBeArray();
 });

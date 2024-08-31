@@ -3,7 +3,6 @@
 namespace Modules\Jw\Actions;
 
 use App\Traits\Actionable;
-use Illuminate\Database\Eloquent\Collection;
 
 class LifeMinistryList
 {
