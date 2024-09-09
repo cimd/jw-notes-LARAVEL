@@ -43,6 +43,7 @@ class Watchtower extends BasicSpider
      */
     public function parse(Response $response): Generator
     {
+        $article = $response->filter('article')->html();
         $header = $response->filter('div > header > h1')->text();
         $text = $response->filter('div.bodyTxt > p')->each(function (Crawler $node, $i): string {
             return $node->html();
@@ -53,6 +54,7 @@ class Watchtower extends BasicSpider
         });
 
         yield $this->item([
+            'article' => $article,
             'header' => $header,
             'text' => $text,
             'recapTitle' => $recapTitle,
